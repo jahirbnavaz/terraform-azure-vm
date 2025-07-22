@@ -25,7 +25,10 @@ resource "azurerm_public_ip" "main" {
   name                = "${var.vm_name}-pip"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
-  allocation_method   = "Static"
+  allocation_method   = "Static"      # ✅ Fixed here
+  sku                 = "Standard"    # ✅ Required for this fix
+}
+
 }
 
 resource "azurerm_network_interface" "main" {
