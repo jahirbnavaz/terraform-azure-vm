@@ -29,8 +29,6 @@ resource "azurerm_public_ip" "main" {
   sku                 = "Standard"    # ✅ Required for this fix
 }
 
-}
-
 resource "azurerm_network_interface" "main" {
   name                = "${var.vm_name}-nic"
   location            = azurerm_resource_group.main.location
